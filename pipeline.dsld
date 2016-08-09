@@ -1,5 +1,5 @@
 jobname = 'pipelinedsld'
-pipelineJob($jobname)
+pipelineJob(${jobname})
 {
    wrappers{
    colorizeOutput('xterm')}
