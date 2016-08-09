@@ -1,0 +1,16 @@
+$jobname = 'pipelinedsld'
+pipelineJob($jobname)
+{
+   wrappers{
+   colorizeOutput('xterm')}
+   logRotator(1,3,6,10)
+	definition{
+	cpsScm{
+	scm{
+	    git{
+	      branch('master')
+	}
+	}
+	scriptPath('pipeline.groovy')
+	}
+	}
