@@ -7,10 +7,9 @@ pipelineJob($jobname)
 	definition{
 	cpsScm{
 	scm{
-	    git{
-	      branch('master')
-	}
+	    git('https://github.com/vamsimakkena8/jenkins_scripts','master',null)
 	}
 	scriptPath('pipeline.groovy')
+	}
 	}
 	}
