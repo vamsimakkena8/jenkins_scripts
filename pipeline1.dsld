@@ -7,12 +7,14 @@ pipelineJob($jobname)
    logRotator(1,3,6,10)
    definition{
 	cpsScm {
-		git{
-			branch('master')
-			remote{
-				credentials('ebe9623e-b427-4e47-8b40-e7e553acb165')
-				url('https://github.com/vamsimakkena8/jenkins_scripts.git')
-				
+	       scm{
+			git{
+				branch('master')
+				remote{
+					credentials('ebe9623e-b427-4e47-8b40-e7e553acb165')
+					url('https://github.com/vamsimakkena8/jenkins_scripts.git')
+					
+				}
 			}
 		}
 	}
