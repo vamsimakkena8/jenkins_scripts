@@ -2,13 +2,20 @@ $jobname = 'pipelinedsld1'
 pipelineJob($jobname)
 {
    wrappers{
-   colorizeOutput('xterm')}
+   colorizeOutput('xterm')
+   }
    logRotator(1,3,6,10)
-	definition{
+   definition{
 	cpsScm {
-	scm {
-        git('https://github.com/vamsimakkena8/jenkins_scripts', 'master', null)
-        }
+		git{
+			branch('master')
+			remote{
+				credentials('ebe9623e-b427-4e47-8b40-e7e553acb165')
+				url('https://github.com/vamsimakkena8/jenkins_scripts.git')
+				
+			}
+		}
 	}
-	}
-	}
+  }
+}
+	
